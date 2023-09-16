@@ -1,0 +1,9 @@
+1 steam,
+3 playst
+11 - epic
+8- google play
+4-appstore
+5-gog 
+2-xbox
+6-nontendo
+7-xbox-360
