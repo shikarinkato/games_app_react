@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import normalContext from "../context/normalContext";
 import Logo from "../utils/images/logo.png";
 import { isDisabled } from "@testing-library/user-event/dist/utils";
@@ -27,7 +27,7 @@ const Login = () => {
       navigate("/store");
       return;
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, navigate]);
 
   return (
     <div className=" w-[100%] flex justify-center items-center h-[100vh]">

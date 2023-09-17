@@ -66,7 +66,6 @@ const GameDetails = () => {
       });
       getCartItems(user.user.token);
 
-      const data = await response.json();
       if (response.ok) {
         toast.success("Added To Cart Successfully");
         setLoading(false);
@@ -127,40 +126,44 @@ const GameDetails = () => {
     }
 
     const handleResize = () => {
-      if (window.offsetWidth <= 768) {
+      if (window.innerWidth <= 768) {
         setShowAll(true);
-        return;
-      }
-
-      window.addEventListener("resize", handleResize);
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    };
-
-    const item = () => {
-      const isAdded = wishlistItems.some((i) => {
-        if (i.game_id === gameDetails.id && i.isAdded === true) {
-          setGameId(i._id);
-          return true;
-        }
-        return false;
-      });
-      if (isAdded) {
-        setItemAdded(true);
-        return;
       } else {
-        setItemAdded(false);
-        return;
+        setShowAll(false);
       }
     };
-    item();
-  }, [showAll, Additem, itemadded, Additem, removeItem]);
 
-  // if (stores.length === 0) {
-  //   return <Loader />;
-  // }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [
+    gameDetails.id,
+    gameDetails.length,
+    navigate,
+    setItemAdded,
+    wishlistItems,
+  ]);
+
+  const item = () => {
+    const isAdded = wishlistItems.some((i) => {
+      if (i.game_id === gameDetails.id && i.isAdded === true) {
+        setGameId(i._id);
+        return true;
+      }
+      return false;
+    });
+    if (isAdded) {
+      setItemAdded(true);
+      return;
+    } else {
+      setItemAdded(false);
+      return;
+    }
+  };
+  item();
 
   return (
     <div className=" mt-[5rem] md:mt-[10rem]">
@@ -594,6 +597,7 @@ const GameDetails = () => {
                   } else {
                     return 0;
                   }
+                  return 0;
                 })}
             </div>
           </div>

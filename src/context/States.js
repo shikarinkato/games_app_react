@@ -102,7 +102,7 @@ const States = (props) => {
         setLoading(false);
       }
     },
-    []
+    [url2]
   );
 
   // const gameTrailer = useMemo(
@@ -355,7 +355,6 @@ const States = (props) => {
         getCartItems(user.user.token);
       }
 
-      const data = await response.json();
 
       if (response.ok) {
         toast.success(`Removed From ${thing} SuccessFully`);

@@ -31,7 +31,7 @@ const App = () => {
     }
 
     getgame(page, searchTerm);
-  }, [isAuthenticated, page, searchTerm]);
+  }, [isAuthenticated, page, searchTerm, GetMyProfile, getgame]);
 
   // let body = document.getElementsByTagName("body");
   // if (!user || !user.user) {

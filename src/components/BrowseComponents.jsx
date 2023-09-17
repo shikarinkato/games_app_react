@@ -1,37 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
 const BrowseComponents = () => {
-  const [refresh, setRefresh] = useState(false);
   const arr = [1, 2, 3, 4, 5, 6, 7, 8];
   const arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-  const shiftRight = () => {
-    const wrapper = document.querySelector(".genrewrapper");
-    const width = wrapper.offsetWidth;
-    wrapper.scrollLeft += width;
-    setRefresh(!refresh);
-  };
+  // const shiftRight = () => {
+  //   const wrapper = document.querySelector(".genrewrapper");
+  //   const width = wrapper.offsetWidth;
+  //   wrapper.scrollLeft += width;
+  //   setRefresh(!refresh);
+  // };
 
   // const clickhandler = () => {
   //   console.log(JSON.parse(localStorage.getItem("user")));
   // };
 
-  const shiftLeft = () => {
-    const wrapper = document.querySelector(".genrewrapper");
-    const width = wrapper.offsetWidth;
-    wrapper.scrollLeft -= width;
-    setRefresh(!refresh);
-  };
-  const breakpoints = [
-    { width: 500, itemToShow: 1 },
-    { width: 768, itemToShow: 2 },
-    { width: 1024, itemToShow: 3 },
-    { width: 1280, itemToShow: 4 },
-  ];
-
+  // const shiftLeft = () => {
+  //   const wrapper = document.querySelector(".genrewrapper");
+  //   const width = wrapper.offsetWidth;
+  //   wrapper.scrollLeft -= width;
+  //   setRefresh(!refresh);
+  // };
+ 
   return (
     <div className="flex flex-col ">
       <div className="flex flex-col mt-28 gap-y-8">

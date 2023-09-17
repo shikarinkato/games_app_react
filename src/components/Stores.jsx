@@ -139,7 +139,7 @@ const Stores = ({ stores }) => {
                 x="0px"
                 y="0px"
                 viewBox="0,0,256,256"
-                style="fill:#000000;"
+                style={{ fill: "#000000" }}
                 className="h-[15px] w-[15px] md:w-[25px] md:h-[25px] store"
                 // onClick={() => {
                 //   window.open(`${e.url}`, "_blank");
@@ -160,7 +160,7 @@ const Stores = ({ stores }) => {
                   font-weight="none"
                   font-size="none"
                   text-anchor="none"
-                  style="mix-blend-mode: normal"
+                  style={{ mixBlendMode: "normal" }}
                 >
                   <g transform="scale(5.12,5.12)">
                     <path
@@ -186,6 +186,7 @@ const Stores = ({ stores }) => {
             );
           } else {
           }
+          return 0;
         })}
     </div>
   );
