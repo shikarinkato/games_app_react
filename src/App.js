@@ -30,7 +30,7 @@ const App = () => {
       GetMyProfile();
     }
 
-    getgame(page, searchTerm);
+    // getgame(page, searchTerm);
   }, [isAuthenticated, page, searchTerm, GetMyProfile, getgame]);
 
   // let body = document.getElementsByTagName("body");
