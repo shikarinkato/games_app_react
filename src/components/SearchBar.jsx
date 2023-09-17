@@ -52,12 +52,11 @@ const SearchBar = () => {
     setShowMenu(false); // Close the menu when opening the search input
   };
 
-  
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1280) {
         setShowMenu(false);
+        return;
       }
     };
 
@@ -166,7 +165,6 @@ const SearchBar = () => {
               Browse
             </li>
           </Link>
-          
         </div>
       </ul>
       <div>

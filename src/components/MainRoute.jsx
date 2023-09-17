@@ -11,6 +11,7 @@ const MainRoute = () => {
     setLoading,
     getItems,
     getCartItems,
+    data,
   } = useContext(normalContext);
 
   const navigate = useNavigate();
@@ -20,9 +21,10 @@ const MainRoute = () => {
       let user = JSON.parse(localStorage.getItem("user"));
       if (user) {
         setIsAuthenticated(true);
-
-        getItems(user.user.token);
-        getCartItems(user.user.token);
+        if (data.length !== 0 || data !== null) {
+          getItems(user.user.token);
+          getCartItems(user.user.token);
+        }
         setLoading(false);
         navigate("/store");
         return;
@@ -40,6 +42,7 @@ const MainRoute = () => {
     getItems,
     getCartItems,
     navigate,
+    data,
   ]);
 
   return (
