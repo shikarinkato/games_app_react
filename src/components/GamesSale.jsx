@@ -19,7 +19,6 @@ const GamesSale = () => {
   if (loading) {
     return <Loader />;
   }
-
   if (!data || data.length === 0) {
     return (
       <div className=" mt-[5rem] sm:mt-[10rem]  sm:mb-0 flex  flex-col items-center h-[25vh]  sm:h-[20vh]  w-screen  ">

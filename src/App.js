@@ -39,6 +39,8 @@ const App = () => {
   //   return;
   // }
 
+  
+
   return (
     <div className="flex flex-col min-h-screen min-w-max bg-zinc-900">
       <Router>

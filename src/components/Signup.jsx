@@ -52,6 +52,7 @@ const Signup = () => {
       );
 
       if (!response.ok) {
+        setLoading(false)
         throw new Error("Failed To Upload Image");
       }
       const jsonData = await response.json();

@@ -68,15 +68,15 @@ const GameDetails = () => {
 
       if (response.ok) {
         toast.success("Added To Cart Successfully");
-        setLoading(false);
       } else {
         toast.error("Failed To Add to Wishlist");
-        setLoading(false);
         throw new Error();
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
       toast.error("Some Internal Server Error");
+      setLoading(false);
     }
   };
 
@@ -105,17 +105,19 @@ const GameDetails = () => {
 
       if (response.ok) {
         toast.success(data.message);
-        setLoading(false);
+
         setItemAdded(true);
       } else {
         toast.error("Failed To Add to Wishlist");
-        setLoading(false);
+
         setItemAdded(false);
         throw new Error();
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
       toast.error("Some Internal Server Error");
+      setLoading(false);
     }
   };
 

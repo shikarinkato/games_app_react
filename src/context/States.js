@@ -28,6 +28,7 @@ const States = (props) => {
   // const backendurl = `http://localhost:5000/api/v3`;
 
   const getgame = async (page, searchTerm, genres, modes) => {
+    setLoading(true);
     try {
       let apiUrl = `${url}key=${apikey}&page=${page}`;
 
@@ -50,6 +51,7 @@ const States = (props) => {
       }
       let response = await fetch(apiUrl);
       if (!response.ok) {
+        setLoading(false);
         setData(null);
         throw new Error("Network response was not ok.");
       } else {
@@ -164,6 +166,7 @@ const States = (props) => {
         localStorage.setItem("user", JSON.stringify(data));
         setIsAuthenticated(true);
         setUser(JSON.parse(localStorage.getItem("user")));
+        setLoading(false);
       }
       if (!response.ok) {
         toast.error(data.message);
@@ -263,11 +266,13 @@ const States = (props) => {
         setIsAuthenticated(true);
         setUser(data);
         setRefresh(true);
+        setLoading(false);
       }
       // toast.success(data.message);
       if (!data) {
         toast.error("Log in or Regsister First");
         setIsAuthenticated(false);
+        setLoading(false);
       }
       setRefresh(true);
       setLoading(false);
@@ -300,6 +305,7 @@ const States = (props) => {
         throw new Error();
       }
     } catch (error) {
+      setLoading(false);
       console.log(error);
       toast.error(error.message);
     }
@@ -318,6 +324,8 @@ const States = (props) => {
       });
 
       const data = await response.json();
+      console.log(response);
+      console.log(data);
       if (response.ok) {
         setLoading(false);
         setCartItems(data.item);
@@ -327,10 +335,13 @@ const States = (props) => {
         throw new Error();
       }
     } catch (error) {
+      setLoading(false);
       console.log(error);
       toast.error(error.message);
     }
   };
+
+  console.log(loading);
 
   const removeItem = async (game_id, thing) => {
     setLoading(true);
@@ -366,6 +377,7 @@ const States = (props) => {
         throw new Error();
       }
     } catch (error) {
+      setLoading(false);
       console.log(error);
       toast.error(error.message);
     }

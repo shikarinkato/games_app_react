@@ -20,6 +20,7 @@ const MainRoute = () => {
       let user = JSON.parse(localStorage.getItem("user"));
       if (user) {
         setIsAuthenticated(true);
+
         getItems(user.user.token);
         getCartItems(user.user.token);
         setLoading(false);
@@ -27,6 +28,7 @@ const MainRoute = () => {
         return;
       } else {
         setIsAuthenticated(false);
+        setLoading(false);
         return;
       }
     };
