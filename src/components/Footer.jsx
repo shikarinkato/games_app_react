@@ -7,7 +7,11 @@ const Footer = () => {
     top.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <div className={" bg-[#2a2a2a] py-4 px-4 md:py-8 md:px-16 text-white "}>
+    <div
+      className={
+        " md:mt-[5rem] bg-[#2a2a2a] py-4 px-4 md:py-8 md:px-16 text-white "
+      }
+    >
       <div className="flex flex-wrap justify-between items-center ">
         <div className="flex justify-between items-center gap-x-4">
           <svg

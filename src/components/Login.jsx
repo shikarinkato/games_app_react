@@ -27,6 +27,7 @@ const Login = () => {
       navigate("/store");
       return;
     }
+    navigate("/login");
   }, [isAuthenticated, navigate]);
 
   return (

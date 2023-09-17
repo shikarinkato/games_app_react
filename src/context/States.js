@@ -50,14 +50,14 @@ const States = (props) => {
       }
       let response = await fetch(apiUrl);
       if (!response.ok) {
+        setData(null);
         throw new Error("Network response was not ok.");
+      } else {
+        let data = await response.json();
+        setData(data.results);
+        setNext(data.next);
+        setPrevious(data.previous);
       }
-      let data = await response.json();
-      // console.log(data);
-      // console.log(data.results);
-      setData(data.results);
-      setNext(data.next);
-      setPrevious(data.previous);
       setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -354,7 +354,6 @@ const States = (props) => {
       } else {
         getCartItems(user.user.token);
       }
-
 
       if (response.ok) {
         toast.success(`Removed From ${thing} SuccessFully`);

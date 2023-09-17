@@ -43,13 +43,12 @@ const App = () => {
     <div className="flex flex-col min-h-screen min-w-max bg-zinc-900">
       <Router>
         <Navbar />
-        <div className="flex justify-center gap-y-4  pb-8 items-center h-[100%] w-[100%] bg-black md:bg-zinc-900 ">
+        <main className="flex justify-center gap-y-4  pb-8 items-center h-[100%] w-[100%] bg-black md:bg-zinc-900 ">
           <Routes>
             <Route path="/" element={<MainRoute />}>
               <Route index element={<Main />} />
               <Route path="store" element={<StoreComponents />} />
               <Route path="store/gamedetails" element={<GameDetails />} />
-              <Route exact path="browse" element={<BrowseComponents />} />
               <Route
                 exact
                 path="store/wishlist"
@@ -68,13 +67,14 @@ const App = () => {
                   <Items name={"Cart Items"} items={cartItems} thing={"cart"} />
                 }
               />
+              <Route exact path="browse" element={<BrowseComponents />} />
             </Route>
             <Route exact path="/register" element={<Signup />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/profile" element={<Profile />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
-        </div>
+        </main>
         <Footer />
       </Router>
       <Toaster />

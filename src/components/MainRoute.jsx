@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import normalContext from "../context/normalContext";
 
 import SearchBar from "./SearchBar";
@@ -13,6 +13,8 @@ const MainRoute = () => {
     getCartItems,
   } = useContext(normalContext);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const checkUser = () => {
       let user = JSON.parse(localStorage.getItem("user"));
@@ -21,13 +23,22 @@ const MainRoute = () => {
         getItems(user.user.token);
         getCartItems(user.user.token);
         setLoading(false);
+        navigate("/store");
+        return;
       } else {
         setIsAuthenticated(false);
+        return;
       }
     };
-
     checkUser();
-  }, [isAuthenticated, setIsAuthenticated, setLoading, getItems, getCartItems]);
+  }, [
+    isAuthenticated,
+    setIsAuthenticated,
+    setLoading,
+    getItems,
+    getCartItems,
+    navigate,
+  ]);
 
   return (
     <>

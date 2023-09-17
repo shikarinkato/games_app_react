@@ -8,6 +8,9 @@ import { useNavigate } from "react-router-dom";
 const StoreComponents = () => {
   const GamesSale = lazy(() => import("./GamesSale"));
   const navigate = useNavigate();
+
+
+
   return (
     <div className=" storecomponents  flex flex-col">
       <ErrorBoundary
