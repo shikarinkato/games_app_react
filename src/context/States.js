@@ -305,7 +305,6 @@ const States = (props) => {
       }
     } catch (error) {
       setLoading(false);
-      console.log(error);
       toast.error(error.message);
     }
   };
@@ -323,8 +322,6 @@ const States = (props) => {
       });
 
       const data = await response.json();
-      console.log(response);
-      console.log(data);
       if (response.ok) {
         setLoading(false);
         setCartItems(data.item);
@@ -335,12 +332,12 @@ const States = (props) => {
       }
     } catch (error) {
       setLoading(false);
-      console.log(error);
+      // console.log(error);
       toast.error(error.message);
     }
   };
 
-  console.log(loading);
+  // console.log(loading);
 
   const removeItem = async (game_id, thing) => {
     setLoading(true);
@@ -377,7 +374,7 @@ const States = (props) => {
       }
     } catch (error) {
       setLoading(false);
-      console.log(error);
+      // console.log(error);
       toast.error(error.message);
     }
   };

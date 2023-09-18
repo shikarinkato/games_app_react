@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import normalContext from "../context/normalContext";
 import Logo from "../utils/images/logo.png";
 import toast from "react-hot-toast";
@@ -14,6 +14,8 @@ const Signup = () => {
   const [cnfPassword, setCnfPassword] = useState("");
   const [pic, setPic] = useState("");
   const [showPass, setShowPass] = useState(false);
+
+  const navigate = useNavigate();
 
   const passShower = () => {
     setShowPass(!showPass);
@@ -52,7 +54,7 @@ const Signup = () => {
       );
 
       if (!response.ok) {
-        setLoading(false)
+        setLoading(false);
         throw new Error("Failed To Upload Image");
       }
       const jsonData = await response.json();
@@ -78,13 +80,22 @@ const Signup = () => {
     Register(name, email, password, pic);
   };
 
-  if (isAuthenticated) {
-    return <Navigate to="/store" />;
-  }
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/store");
+      return;
+    }
+    navigate("/register");
+  }, [isAuthenticated, navigate]);
+
   return (
     <div className=" w-[100%] flex justify-center items-center h-auto py-2">
       <div className="flex items-center justify-center gap-y-2 md:gap-y-4 mt-20 flex-col text-white bg-[#2a2a2a] py-6 px-4 w-[15rem] sm:w-[20rem] md:w-[25rem]">
-        <img src={Logo} className=" h-[40px] sm:h-[50px] md:h-[60px]" alt="logo" />
+        <img
+          src={Logo}
+          className=" h-[40px] sm:h-[50px] md:h-[60px]"
+          alt="logo"
+        />
         <h1 className=" text-[14px] md:text-xl font-semibold">Sign Up</h1>
         <div className="p-4 flex flex-col  rounded-lg w-[100%]">
           <form

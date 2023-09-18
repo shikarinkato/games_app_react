@@ -24,6 +24,7 @@ const App = () => {
     isAuthenticated,
     wishlistItems,
     cartItems,
+    Register,
   } = context;
   useEffect(() => {
     if (isAuthenticated) {
@@ -31,7 +32,7 @@ const App = () => {
     }
 
     // getgame(page, searchTerm);
-  }, [isAuthenticated, page, searchTerm]);
+  }, [isAuthenticated, page, searchTerm, Register]);
 
   // let body = document.getElementsByTagName("body");
   // if (!user || !user.user) {
@@ -72,7 +73,7 @@ const App = () => {
             <Route exact path="/register" element={<Signup />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/profile" element={<Profile />} />
-            <Route path="*" element={<ErrorPage />} />
+            <Route element={<ErrorPage />} />
           </Routes>
         </main>
         <Footer />
