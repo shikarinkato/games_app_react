@@ -24,15 +24,18 @@ const BrowseComponents = () => {
   //   wrapper.scrollLeft -= width;
   //   setRefresh(!refresh);
   // };
- 
+
   return (
     <div className="flex flex-col ">
       <div className="flex flex-col mt-28 gap-y-8">
-        <div className="flex flex-col gap-y-4 " style={{ maxWidth: "75vw" }}>
-          <div className="flex justify-between items-center text-white">
+        <div
+          className="flex flex-col gap-y-4 h-[20vh] sm:h-[12vh] "
+          style={{ maxWidth: "75vw" }}
+        >
+          {/* <div className="flex justify-between items-center text-white">
             <span>{"Popular Genres "} </span>
-          </div>
-          <Swiper
+          </div> */}
+          {/* <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={50}
             slidesPerView={3}
@@ -56,41 +59,11 @@ const BrowseComponents = () => {
                 </div>
               </SwiperSlide>
             ))}
-          </Swiper>
-          <div className="flex flex-row gap-x-4">
-            <div className="flex flex-col gap-y-4">
-              <div className="flex justify-start items-center gap-x-4 text-white">
-                <span className="text-[#605959]">Show : </span>
-                New Releases
-                <i className="material-symbols-outlined">expand_more</i>
-              </div>
-              <div className="grid grid-cols-4  gap-x-4 gap-y-4">
-                {arr2.map((i) => (
-                  <div key={i} className="flex  flex-col  rounded-md">
-                    <div className="w-[185px]">
-                      <img
-                        src="https://media.rawg.io/media/games/46d/46d98e6910fbc0706e2948a7cc9b10c5.jpg"
-                        alt=""
-                        className=" object-cover h-[240px] w-[185px] rounded-md"
-                      />
-                    </div>
-                    <div className="flex justify-start flex-col gap-y-3 text-white">
-                      <span className="text-[#605959] text-[14px]">
-                        Base Game
-                      </span>
-                      <span>Game Name</span>
-                      <div className="flex gap-x-3 items-center ">
-                        <button className="p-1 bg-sky-600 rounded-lg">
-                          30%
-                        </button>
-                        <span> rs,719</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div></div>
+          </Swiper> */}
+          <div className="h-[2rem]  text-white">
+            <h1 className="text-2xl">
+              Curerntly We have Nothing on This Page To Show You
+            </h1>
           </div>
         </div>
       </div>

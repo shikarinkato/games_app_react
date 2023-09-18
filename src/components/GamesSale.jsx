@@ -25,7 +25,7 @@ const GamesSale = () => {
       <div className=" mt-[5rem] sm:mt-[10rem]  sm:mb-0 flex  flex-col items-center h-[45vh] md:h-[25vh]  sm:h-[20vh]  w-screen  ">
         <div className="flex flex-col-reverse sm:flex-row  justify-center gap-x-4 items-center px-16">
           <h1 className="text-white text-2xl font-semibold">
-            Currently We Are Unable To Fatch Games
+            Currently We Are Unable To Fetch Games
           </h1>
           <img src={GameLogo} alt="gamelogo" />
         </div>

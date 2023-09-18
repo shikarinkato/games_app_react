@@ -32,7 +32,7 @@ const App = () => {
     }
 
     // getgame(page, searchTerm);
-  }, [isAuthenticated, page, searchTerm, Register]);
+  }, [isAuthenticated, page, searchTerm]);
 
   // let body = document.getElementsByTagName("body");
   // if (!user || !user.user) {
