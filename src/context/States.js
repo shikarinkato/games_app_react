@@ -285,7 +285,6 @@ const States = (props) => {
 
   const getItems = async (token) => {
     setLoading(true);
-
     try {
       let response = await fetch(`${backendurl}/wishlist`, {
         method: "GET",
@@ -300,7 +299,7 @@ const States = (props) => {
         setLoading(false);
         setWishlistItems(data.item);
       } else {
-        toast.error("Failed To Fetch Items");
+        toast.error(data.message);
         setLoading(false);
         throw new Error();
       }
@@ -330,7 +329,7 @@ const States = (props) => {
         setLoading(false);
         setCartItems(data.item);
       } else {
-        toast.error("Failed To Fetch Cartitems");
+        toast.error(data.message);
         setLoading(false);
         throw new Error();
       }

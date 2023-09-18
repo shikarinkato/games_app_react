@@ -21,10 +21,12 @@ const MainRoute = () => {
       let user = JSON.parse(localStorage.getItem("user"));
       if (user) {
         setIsAuthenticated(true);
-        // if (data.length !== 0 || data !== null) {
-        //   getItems(user.user.token);
-        //   getCartItems(user.user.token);
-        // }
+        if (user.user.token !== undefined) {
+          getItems(user.user.token);
+          getCartItems(user.user.token);
+          return;
+        }
+        console.log(user.user.token);
         setLoading(false);
         navigate("/store");
         return;
@@ -35,15 +37,7 @@ const MainRoute = () => {
       }
     };
     checkUser();
-  }, [
-    isAuthenticated,
-    setIsAuthenticated,
-    setLoading,
-    getItems,
-    getCartItems,
-    navigate,
-    data,
-  ]);
+  }, [isAuthenticated]);
 
   return (
     <>

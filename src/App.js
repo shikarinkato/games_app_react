@@ -31,15 +31,13 @@ const App = () => {
     }
 
     // getgame(page, searchTerm);
-  }, [isAuthenticated, page, searchTerm, GetMyProfile, getgame]);
+  }, [isAuthenticated, page, searchTerm]);
 
   // let body = document.getElementsByTagName("body");
   // if (!user || !user.user) {
   //   <Loader />;
   //   return;
   // }
-
-  
 
   return (
     <div className="flex flex-col min-h-screen min-w-max bg-zinc-900">
