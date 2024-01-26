@@ -242,7 +242,7 @@ const GameDetails = () => {
                 gameDetails.background_image_additional &&
                 gameDetails.background_image_additional
               }
-              alt=""
+              alt={gameDetails.name}
             />
             <p className="text-[12px] sm:text-[16px] md:text-[20px]">
               {gameDetails.description_raw && gameDetails.description_raw}

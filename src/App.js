@@ -31,7 +31,7 @@ const App = () => {
       GetMyProfile();
     }
 
-    // getgame(page, searchTerm);
+    getgame(page, searchTerm);
   }, [isAuthenticated, page, searchTerm]);
 
   // let body = document.getElementsByTagName("body");
